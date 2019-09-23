@@ -98,7 +98,7 @@ var ppl = [
   "Samson", "Esther", "Saul", "Hagar", "Elijah", "Jezebel", "Ahaz", "Ruth", "Sisera", "Delilah", "Abraham", "Abednago", "Omri", "Gideon", "Goliath"
 ];
 
-function setup() 
+function setup()
 {
   new_sentence();
 
@@ -106,7 +106,7 @@ function setup()
   frameRate(24);
 }
 
-function draw() 
+function draw()
 {
   if(instructionPanelToggle)
   {
@@ -114,8 +114,8 @@ function draw()
     textSize(24);
     fill(180,180,180);
 
-    text("'a' to switch modes\n'c' to switch colors\n'q' to view instruction panel\nclick to change sentence", 60, 100);
-  } 
+    text("'a' to switch modes\n'c' to switch colors\n'q' to view instruction panel\nclick to change sentence (and to start)", 60, 100);
+  }
   else
   {
     background(255,255,255, opacity);
@@ -135,7 +135,7 @@ function draw()
         // LETTER TEXTURE
     if(letterBG){
       for(var i = 0; i<1500; i++)
-      {         
+      {
         changeFill(num1);
         var index = int(random(currentWords.length-1));
         text(random(currentWords[index].substring(3, currentWords[index].length).split("")), random(0,600), random(0,800));
@@ -157,7 +157,7 @@ function draw()
       // FULL LETTER TEXTURE
     else {
       for(var i = 0; i<500; i++)
-      {         
+      {
         changeFill(num1);
         var index = int(random(currentWords.length-1));
         text(currentWords[index].substring(3, currentWords[index].length), random(0,600), random(0,800));
@@ -190,7 +190,7 @@ function draw()
   }
 }
 
-function pick_word(words) 
+function pick_word(words)
 {
 	var n = int(random(words.length));
 	wrdF = words[n];
@@ -198,7 +198,7 @@ function pick_word(words)
 	return wrdF;
 }
 
-function new_sentence() 
+function new_sentence()
 {
 	w1 = int(random(100, 400)).toString() + pick_word(art);
 	w2 = int(random(100, 400)).toString() + pick_word(adj);
@@ -219,7 +219,7 @@ function new_sentence()
 	xRand = random(400)
 }
 
-function mousePressed() 
+function mousePressed()
 {
 	if(instructionPanelToggle)
 	{
@@ -232,14 +232,14 @@ function mousePressed()
 	}
 }
 
-function keyPressed() 
+function keyPressed()
 {
-	if (key == 'a') 
+	if (key == 'a')
 	{
 	  letterBG = !letterBG;
 	}
 
-	if (key == 'c') 
+	if (key == 'c')
 	{
 	  if(bgColor == "blue")
 	  {
